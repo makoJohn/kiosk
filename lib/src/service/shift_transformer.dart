@@ -6,8 +6,15 @@ class ShiftTransformer {
     return events.map((e) {
       var durationInMinutes =
           e.end.dateTime.difference(e.start.dateTime).inMinutes;
-      var earnings =
-          e.description == null ? 0 : int.parse(e.description.trim());
+
+      var earnings = 0;
+      if (e.description != null) {
+        var parsedDescription = int.tryParse(e.description);
+        if (parsedDescription != null) {
+          earnings = parsedDescription;
+        }
+      }
+
       return Shift(e.summary.trim(), e.organizer.displayName, durationInMinutes,
           earnings);
     }).toList();

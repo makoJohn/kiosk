@@ -75,4 +75,6 @@ Map<String, Salary> _DEFAULT_SALARY_MAP = {
   "Саша": new Salary(20, "uah", 3),
   "Руслан": new Salary(20, "uah", 3),
   "Эля": new Salary(20, "uah", 3),
+  "Катя": new Salary(9, "pln", 3),
+  "Валера": new Salary(24, "uah", 0),
 };
